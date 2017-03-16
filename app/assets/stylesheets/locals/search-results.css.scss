@@ -1,0 +1,64 @@
+input[type=checkbox].css-checkbox {
+  position:absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height:1px;
+  width:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+  padding-left:22px;
+  height:17px;
+  display:inline-block;
+  line-height:17px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  font-size:17px;
+  vertical-align:middle;
+  cursor:pointer;
+  color: #fff;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -17px;
+  color: #fff;
+}
+label.css-label {
+background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_314a66eb1641f8832a7ada19bbf96697.png);
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+
+
+.access-input {
+  background-color: #292A72;
+  padding: 1em 0;
+  h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 100;
+    line-height: 60px;
+    padding: 0 1em;
+  }
+}
+
+.access-info {
+  margin: 5% 5% 0 0;
+  p {
+    color: #fff;
+    font-size: 10px;
+  }
+}
+
+.search-header {
+  background-color: #292A72;
+  margin-bottom: 1em;
+}
