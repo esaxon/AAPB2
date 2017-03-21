@@ -1,5 +1,5 @@
-<ul class="facet-values list-unstyled">
-  <% 
+<ul class="access-facet-values list-unstyled">
+  <%
     base_uri = '/catalog?' + (
       {f: (params['f'].except('access_types') rescue {})}.merge(
         params.except('action', 'controller', 'f')
@@ -21,21 +21,29 @@
     ].each do |option|
   %>
     <li>
-      <span class="facet-label">
+      <div class="col-md-3 access-input">
         <% if params.try(:[],'f').try(:[],'access_types') == [option[:value]] %>
-          <span class="selected"><%= option[:title] %></span>
-          <a class="remove">
-            <span class="glyphicon glyphicon-ok"></span>
-            <span class="sr-only">[checked]</span>
-          </a>
+          <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox checked" />
+          <label for="checkboxG3" class="css-label">
+            <%= option[:title] %>
+            <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
+          </label>
+          <div class="access-info">
+            <p><%= option[:info_html].html_safe %></p>
+          </div>
         <% else %>
-          <span class="selected"><a href="<%= base_uri %>&amp;f[access_types][]=<%= option[:value] %>" class="facet_select"><%= option[:title] %></a></span>
+          <a href="<%= base_uri %>&amp;f[access_types][]=<%= option[:value] %>" class="facet_select">
+          <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" />
+          <label for="checkboxG3" class="css-label">
+            <%= option[:title] %>
+            <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
+          </label>
+          </a>
+          <div class="access-info">
+            <p><%= option[:info_html].html_safe %></p>
+          </div>
         <% end %>
-      </span>
-      <span class="facet-count"><%= facet_counts[option[:value]] || 0 %></span>
+      </div>
     </li>
-    <li><div class="well well-sm"><small>
-      <%= option[:info_html].html_safe %>
-    </small></div></li>
   <% end %>
 </ul>
