@@ -26,21 +26,23 @@
     <li>
       <div class="col-md-3 col-sm-3 col-xs-4 access-input">
         <% if params.try(:[],'f').try(:[],'access_types') == [option[:value]] %>
-          <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox checked" />
-          <label for="checkboxG3" class="css-label">
-            <%= option[:title] %>
-            <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
-          </label>
+          <a href="<%= base_uri %>&amp;f[access_types][]=<%= option[:value] %>" class="facet_select">
+            <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox checked" />
+            <label for="checkboxG3" class="css-label">
+              <%= option[:title] %>
+              <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
+             </label>
+          </a>
           <div class="access-info hidden-xs">
             <p><%= option[:info_html].html_safe %></p>
           </div>
         <% else %>
           <a href="<%= base_uri %>&amp;f[access_types][]=<%= option[:value] %>" class="facet_select">
-          <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" />
-          <label for="checkboxG3" class="css-label">
-            <%= option[:title] %>
-            <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
-          </label>
+            <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" />
+            <label for="checkboxG3" class="css-label">
+              <%= option[:title] %>
+              <span class="facet-count">(<%= facet_counts[option[:value]] || 0 %>)</span>
+            </label>
           </a>
           <div class="access-info hidden-xs">
             <p><%= option[:info_html].html_safe %></p>

@@ -96,6 +96,10 @@ user-select: none;
     list-style-type: none;
     padding: 0;
   }
+  a:focus {
+    outline: #fff 3px solid;
+    padding: 3px;
+  }
 }
 
 @media screen and (max-width: 768px) {
