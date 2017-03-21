@@ -67,7 +67,6 @@ user-select: none;
     color: #fff;
     font-size: 2em;
     font-weight: 100;
-    line-height: 60px;
     padding: 0 1em;
   }
 }
@@ -102,5 +101,10 @@ user-select: none;
 @media screen and (max-width: 768px) {
   .search-header {
     text-align: center;
+  }
+  input[type=checkbox].css-checkbox + label.css-label {
+    font-size: 14px;
+    line-height: 14px;
+    height: 16px;
   }
 }
