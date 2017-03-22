@@ -109,8 +109,7 @@ describe 'Catalog' do
           ['topics', 1, 'Music', 2],
           ['asset_type', 1, 'Segment', 5],
           ['organization', 32, 'WGBH+(MA)', 2], # tag ex and states mean lots of facet values.
-          ['year', 1, '2000', 1],
-          ['access_types', 3, PBCore::ALL_ACCESS, 26]
+          ['year', 1, '2000', 1]
         ]
         it 'has them all' do
           visit "/catalog?f[access_types][]=#{PBCore::ALL_ACCESS}"
@@ -141,6 +140,20 @@ describe 'Catalog' do
           ]
           assertions.each do |facet, value, value_count|
             url = "/catalog?f[access_types][]=#{PBCore::ALL_ACCESS}&f[#{facet}][]=#{value}"
+            it "#{facet}=#{value}: #{value_count}\t#{url}" do
+              visit url
+              expect_count(value_count)
+              expect_fuzzy_xml
+            end
+          end
+        end
+
+        describe 'access facet' do
+          assertions = [
+            ['access_types', PBCore::ALL_ACCESS, 26]
+          ]
+          assertions.each do |facet, value, value_count|
+            url = "/catalog?f[#{facet}][]=#{value}"
             it "#{facet}=#{value}: #{value_count}\t#{url}" do
               visit url
               expect_count(value_count)

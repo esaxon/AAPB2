@@ -2,7 +2,7 @@
 class SolrDocument
   include Blacklight::Solr::Document
 
-  ACCESS_FACET_FIELD = 'access_types'
+  ACCESS_FACET_FIELD = 'access_types'.freeze
 
   # self.unique_key = 'id'
 
