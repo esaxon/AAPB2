@@ -19,7 +19,7 @@ $grid-item-height: 250px;
   }
 }
 
-input[type=checkbox].css-checkbox {
+input[type=checkbox].access-checkbox {
   position:absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -30,7 +30,7 @@ input[type=checkbox].css-checkbox {
   border:0;
 }
 
-input[type=checkbox].css-checkbox + label.css-label {
+input[type=checkbox].access-checkbox + label.access-label {
   padding-left:22px;
   height:17px;
   display:inline-block;
@@ -43,13 +43,13 @@ input[type=checkbox].css-checkbox + label.css-label {
   color: #fff;
 }
 
-input[type=checkbox].css-checkbox.checked + label.css-label {
+input[type=checkbox].access-checkbox.checked + label.access-label {
   background-position: 0 -17px;
   color: #fff;
 }
 
-label.css-label {
-background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_314a66eb1641f8832a7ada19bbf96697.png);
+label.access-label {
+background-image:url(/assets/access_checkbox.png);
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
@@ -106,7 +106,7 @@ user-select: none;
   .search-header {
     text-align: center;
   }
-  input[type=checkbox].css-checkbox + label.css-label {
+  input[type=checkbox].access-checkbox + label.access-label {
     font-size: 14px;
     line-height: 14px;
     height: 16px;
